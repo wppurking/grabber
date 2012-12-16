@@ -28,20 +28,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="amz_parser.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="amz_parser.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/amz_parser.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="29" selection-start="1222" selection-end="1222" vertical-scroll-proportion="0.58842444">
-              <folding />
+            <state line="24" column="4" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1355675041000" expanded="true" signature="52:1117" placeholder="{...}" />
+                <marker date="1355675041000" expanded="true" signature="201:1117" placeholder="{...}" />
+                <marker date="1355675041000" expanded="true" signature="1767:1860" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="amz_parser_spec.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="amz_parser_spec.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/amz_parser_spec.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="42" selection-start="2167" selection-end="2167" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="25" column="44" selection-start="2420" selection-end="2420" vertical-scroll-proportion="0.65681446">
+              <folding>
+                <marker date="1355674946000" expanded="true" signature="128:2421" placeholder="{...}" />
+                <marker date="1355674946000" expanded="true" signature="158:2421" placeholder="{...}" />
+                <marker date="1355674946000" expanded="true" signature="1291:2421" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,7 +114,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -204,7 +212,7 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.sourceCode.CoffeeScript" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="last_opened_file_path" value="/usr/local/lib/node_modules/coffee-script/bin/coffee" />
     <property name="options.searchVisible" value="true" />
@@ -325,7 +333,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1362" height="746" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -406,13 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/request/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="2" selection-end="2" vertical-scroll-proportion="0.026272578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="17" selection-start="210" selection-end="210" vertical-scroll-proportion="0.2829582">
@@ -455,15 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/request/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="2" selection-start="1462" selection-end="1462" vertical-scroll-proportion="0.49063033">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/req.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="12" selection-start="210" selection-end="210" vertical-scroll-proportion="0.25723472">
@@ -499,17 +491,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/amz_parser_spec.coffee">
+    <entry file="file://$PROJECT_DIR$/routes/amz_parser.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="42" selection-start="2167" selection-end="2167" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="24" column="4" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1355675041000" expanded="true" signature="52:1117" placeholder="{...}" />
+            <marker date="1355675041000" expanded="true" signature="201:1117" placeholder="{...}" />
+            <marker date="1355675041000" expanded="true" signature="1767:1860" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/amz_parser.coffee">
+    <entry file="file://$PROJECT_DIR$/test/amz_parser_spec.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="29" selection-start="1222" selection-end="1222" vertical-scroll-proportion="0.58842444">
-          <folding />
+        <state line="25" column="44" selection-start="2420" selection-end="2420" vertical-scroll-proportion="0.65681446">
+          <folding>
+            <marker date="1355674946000" expanded="true" signature="128:2421" placeholder="{...}" />
+            <marker date="1355674946000" expanded="true" signature="158:2421" placeholder="{...}" />
+            <marker date="1355674946000" expanded="true" signature="1291:2421" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
