@@ -9,7 +9,6 @@ fs = require 'fs'
   url = exports.amazon_url market, asin
   console.log "Fetch URL: #{url}"
   r.get(url, (err, request_req, body) ->
-    fs.writeFile('./B008YRG5JQ.html', body, (err) -> console.log "Saved." if not err)
     res.json(amz_parser.listing(body))
   )
 

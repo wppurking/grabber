@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44c63f23-c1c9-4eb9-8f71-49bbb00474ff" name="Default" comment="" />
+    <list default="true" id="44c63f23-c1c9-4eb9-8f71-49bbb00474ff" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/amazon.coffee" afterPath="$PROJECT_DIR$/routes/amazon.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/amz_parser.coffee" afterPath="$PROJECT_DIR$/routes/amz_parser.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/amz_parser_spec.coffee" afterPath="$PROJECT_DIR$/test/amz_parser_spec.coffee" />
+    </list>
     <ignored path="grabber.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,10 +24,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="amazon.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="amazon.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/amazon.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="14" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
+            <state line="11" column="20" selection-start="312" selection-end="312" vertical-scroll-proportion="0.2829582">
               <folding />
             </state>
           </provider>
@@ -31,25 +36,17 @@
       <file leaf-file-name="amz_parser.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/amz_parser.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="4" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1355675041000" expanded="true" signature="52:1117" placeholder="{...}" />
-                <marker date="1355675041000" expanded="true" signature="201:1117" placeholder="{...}" />
-                <marker date="1355675041000" expanded="true" signature="1767:1860" placeholder="{...}" />
-              </folding>
+            <state line="14" column="47" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="amz_parser_spec.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="amz_parser_spec.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/amz_parser_spec.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="44" selection-start="2420" selection-end="2420" vertical-scroll-proportion="0.65681446">
-              <folding>
-                <marker date="1355674946000" expanded="true" signature="128:2421" placeholder="{...}" />
-                <marker date="1355674946000" expanded="true" signature="158:2421" placeholder="{...}" />
-                <marker date="1355674946000" expanded="true" signature="1291:2421" placeholder="{...}" />
-              </folding>
+            <state line="10" column="17" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,6 +67,9 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -79,10 +79,10 @@
         <option value="$PROJECT_DIR$/routes/req.coffee" />
         <option value="$PROJECT_DIR$/routes/amzParse.coffee" />
         <option value="$PROJECT_DIR$/test/html/B008YRG5JQ.html" />
-        <option value="$PROJECT_DIR$/routes/amazon.coffee" />
         <option value="$PROJECT_DIR$/app.coffee" />
         <option value="$PROJECT_DIR$/test/amz_parser_spec.coffee" />
         <option value="$PROJECT_DIR$/routes/amz_parser.coffee" />
+        <option value="$PROJECT_DIR$/routes/amazon.coffee" />
       </list>
     </option>
   </component>
@@ -333,7 +333,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1362" height="746" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -421,13 +421,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cheerio/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="18" selection-start="104" selection-end="104" vertical-scroll-proportion="0.12861736">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/express.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="0" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.9517685">
@@ -484,32 +477,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/amazon.coffee">
+    <entry file="file://$PROJECT_DIR$/test/amz_parser_spec.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="14" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0">
+        <state line="10" column="17" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/amz_parser.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="4" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1355675041000" expanded="true" signature="52:1117" placeholder="{...}" />
-            <marker date="1355675041000" expanded="true" signature="201:1117" placeholder="{...}" />
-            <marker date="1355675041000" expanded="true" signature="1767:1860" placeholder="{...}" />
-          </folding>
+        <state line="14" column="47" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/amz_parser_spec.coffee">
+    <entry file="file://$PROJECT_DIR$/routes/amazon.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="44" selection-start="2420" selection-end="2420" vertical-scroll-proportion="0.65681446">
-          <folding>
-            <marker date="1355674946000" expanded="true" signature="128:2421" placeholder="{...}" />
-            <marker date="1355674946000" expanded="true" signature="158:2421" placeholder="{...}" />
-            <marker date="1355674946000" expanded="true" signature="1291:2421" placeholder="{...}" />
-          </folding>
+        <state line="11" column="20" selection-start="312" selection-end="312" vertical-scroll-proportion="0.2829582">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -9,6 +9,7 @@ cheerio = require 'cheerio'
   review_li = sale_rank.prev()
 
   lst =
+    market: $('.navFooterLogoLine a img').attr('alt')
     asin: asin
     title: $('#btAsinTitle').text()
     byWho: $("#btAsinTitle").parent().parent().find('a').text()
@@ -24,6 +25,7 @@ cheerio = require 'cheerio'
     after_viewing: after_viewing($('#cpsims-feature'))
     seller_rank: seller_rank($('#SalesRank'))
     product_desc: $('.productDescriptionWrapper').html().replace('<div class="emptyClear"> </div>', '').trim()
+    promotes: promotes($('#quickPromoBucketContent'))
 
 # 检查 Listing 的所有 Seller Rank
 seller_rank = (rank_li) ->
@@ -46,6 +48,15 @@ seller_rank = (rank_li) ->
     ranks.push str_to_rank(@text())
   log ranks
   ranks
+
+# 检查是否有优惠
+# TODO 等待测试
+promotes = (wrapper) ->
+  lis = []
+  wrapper.find('li').each (i) ->
+    lis.push @html()
+  lis
+
 
 # 抓取这个 Listing 的 After Viewing 部分的 Listing 链接
 after_viewing = (wrapper) ->
