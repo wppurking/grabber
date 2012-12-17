@@ -1,5 +1,6 @@
 request = require 'request'
 zlib = require 'zlib'
+fs = require 'fs'
 
 @get = (url, callback) ->
   opt =

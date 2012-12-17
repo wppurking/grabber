@@ -1,16 +1,18 @@
 cheerio = require 'cheerio'
 
 @listing = (body) ->
-  $ = cheerio.load(body)
+  $ = cheerio.load(body.toString('iso8859-1'))
   # shared attrs
   asin = $('#ASIN').attr('value')
+  market = $('.navFooterLogoLine a img').attr('alt')
 
   sale_rank = $('#SalesRank')
   review_li = sale_rank.prev()
 
   lst =
-    market: $('.navFooterLogoLine a img').attr('alt')
+    market: market
     asin: asin
+    variation: $('#asinRedirect').length == 1
     title: $('#btAsinTitle').text()
     byWho: $("#btAsinTitle").parent().parent().find('a').text()
     review_score: parseFloat(review_li.find('.swSprite').attr('title').split(' ')[0])
@@ -19,13 +21,33 @@ cheerio = require 'cheerio'
     price: parseFloat($('#listPriceValue').text()[1..-1])
     sale: parseFloat($('#actualPriceValue').text()[1..-1])
     currency: $('#listPriceValue').text()[0]
-    main_pic: $('#prodImageCell img').attr('src')
-    product_features: $("h2:contains('Product Features')").next().find('li').map(()-> $(@).text()).join('\n')
+    main_pic: multi_market_main_pic($, market)
+    product_features: multi_market_product_features($, market)
     also_bought: also_bought($('#purchaseButtonWrapper'))
     after_viewing: after_viewing($('#cpsims-feature'))
     seller_rank: seller_rank($('#SalesRank'))
     product_desc: $('.productDescriptionWrapper').html().replace('<div class="emptyClear"> </div>', '').trim()
     promotes: promotes($('#quickPromoBucketContent'))
+
+multi_market_product_features = (body, market) ->
+  switch market
+    when 'amazon.com'
+      body("h2:contains('Product Features')").next().find('li').map(()-> @text())
+    when 'amazon.de'
+      body("h2:contains('Produktmerkmale')").next().find('li').map(()-> @text())
+    else
+      []
+
+# 不同市场对 main_pic 字段的处理
+multi_market_main_pic = (body, market) ->
+  switch market
+    when 'amazon.com'
+      body('#prodImageCell img').attr('src')
+    when 'amazon.de'
+      body('#main_image_0 img').attr('src')
+    else
+      ""
+
 
 # 检查 Listing 的所有 Seller Rank
 seller_rank = (rank_li) ->
@@ -46,11 +68,9 @@ seller_rank = (rank_li) ->
   ranks = [str_to_rank(text)]
   rank_li.find('.zg_hrsr_item').each (i) ->
     ranks.push str_to_rank(@text())
-  log ranks
   ranks
 
 # 检查是否有优惠
-# TODO 等待测试
 promotes = (wrapper) ->
   lis = []
   wrapper.find('li').each (i) ->
