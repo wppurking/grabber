@@ -1,7 +1,7 @@
 cheerio = require 'cheerio'
 
 @listing = (body) ->
-  $ = cheerio.load(body.toString('iso8859-1'))
+  $ = cheerio.load(body)
   # shared attrs
   asin = $('#ASIN').attr('value')
   market = $('.navFooterLogoLine a img').attr('alt')
