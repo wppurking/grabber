@@ -29,7 +29,7 @@ describe "Parser Amazon Listing", ->
     it "main_pic, product_features, product_desc success parsed", ->
       lst.main_pic.should.equal "http://ecx.images-amazon.com/images/I/41VuBkkagCL._SL500_AA280_.jpg"
       lst.product_features.length.should.equal 5
-      lst.product_features.should.include('Capacity: 12000mAh with Reliable Lithium Polymer battery cells, Supply about 600%~700% of iPhone 4 battery life, or 200%~250% of Google Nexus 7 battery life.')
+      lst.product_features[0].should.include('12000mAh with Reliable Lithium Polymer battery cells')
       lst.product_desc.should.include "Technical specification"
     it "also_bought, after_viewing success parsed", ->
       lst.also_bought.length.should.equal 6
@@ -66,8 +66,8 @@ describe "Parser Amazon Listing", ->
     it "main_pic, product_features, product_desc success parsed", ->
       lst.main_pic.should.equal "http://ecx.images-amazon.com/images/I/41VuBkkagCL._SL500_AA300_.jpg"
       lst.product_features.length.should.equal 5
-      lst.product_features.should.include('Battery Type: Li-polymer battery, Li-polymer battery is more stable and safe than Li-ion battery, such as both iPad and iPhone use the safer Li-polymer battery. 500+ recharge cycles over the life of the battery.')
-      lst.product_desc.should.include "Security Protection Design"
+      lst.product_features[3].should.include('short-circuit and over current protection')
+      lst.product_desc.should.include "Over current protection"
     it "also_bought, after_viewing success parsed", ->
       lst.also_bought.length.should.equal 6
       lst.also_bought.should.include('http://www.amazon.de/EasyAcc-5-Polig-Universal-Ladeger%C3%A4te-Smartphones/dp/B0091CJQMQ/ref=pd_sim_ce_1/276-5869019-3971841')

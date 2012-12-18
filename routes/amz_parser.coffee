@@ -50,9 +50,9 @@ multi_market_sale_parse = (wrapper, market) ->
 multi_market_product_features = (body, market) ->
   switch market
     when 'amazon.com'
-      body("h2:contains('Product Features')").next().find('li').map(()-> @text())
+      body("h2:contains('Product Features')").next().find('li').map(-> @text().trim())
     when 'amazon.de'
-      body("h2:contains('Produktmerkmale')").next().find('li').map(()-> @text())
+      body("h2:contains('Produktmerkmale')").next().find('li').map(-> @text().trim())
     else
       []
 
