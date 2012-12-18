@@ -9,7 +9,8 @@ fs = require 'fs'
   url = exports.amazon_url market, asin
   console.log "Fetch URL: #{url}"
   r.get(url, (err, request_req, body) ->
-    fs.writeFileSync("./#{asin}.html", body, "utf8", -> console.log 'Save Success.')
+    if process.env['ENV'] == 'dev'
+      fs.writeFileSync("./#{asin}.html", body, "utf8", -> console.log 'Save Success.')
     res.json(amz_parser.listing(body))
   )
 

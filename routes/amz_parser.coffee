@@ -18,16 +18,34 @@ cheerio = require 'cheerio'
     review_score: parseFloat(review_li.find('.swSprite').attr('title').split(' ')[0])
     reviews: parseInt(review_li.find('.crAvgStars > a').text().split(' ')[0])
     likes: parseInt($(".amazonLikeCount").text())
-    price: parseFloat($('#listPriceValue').text()[1..-1])
-    sale: parseFloat($('#actualPriceValue').text()[1..-1])
+    price: multi_market_price_parse($, market)
+    sale: multi_market_sale_parse($, market)
     currency: $('#listPriceValue').text()[0]
     main_pic: multi_market_main_pic($, market)
     product_features: multi_market_product_features($, market)
     also_bought: also_bought($('#purchaseButtonWrapper'))
     after_viewing: after_viewing($('#cpsims-feature'))
-    seller_rank: seller_rank($('#SalesRank'))
+    seller_rank: multi_market_seller_rank($('#SalesRank'), market)
     product_desc: $('.productDescriptionWrapper').html().replace('<div class="emptyClear"> </div>', '').trim()
     promotes: promotes($('#quickPromoBucketContent'))
+
+multi_market_price_parse = (wrapper, market) ->
+  switch market
+    when 'amazon.com'
+      parseFloat(wrapper('#listPriceValue').text().replace(/,/g, '')[1..-1])
+    when 'amazon.de'
+      parseFloat(wrapper('.priceLarge').text().replace(/./g, '').replace(/,/g, '.')[4..-1])
+    else
+      0
+
+multi_market_sale_parse = (wrapper, market) ->
+  switch market
+    when 'amazon.com'
+      parseFloat(wrapper('#actualPriceValue').text().replace(/,/g, '')[1..-1])
+    when 'amazon.de'
+      parseFloat(wrapper('.priceLarge').text().replace(/./g, '').replace(/,/g, '.')[4..-1])
+    else
+      0
 
 multi_market_product_features = (body, market) ->
   switch market
@@ -48,27 +66,41 @@ multi_market_main_pic = (body, market) ->
     else
       ""
 
-
-# 检查 Listing 的所有 Seller Rank
-seller_rank = (rank_li) ->
-  str_to_rank = (str) ->
-    rank_obj = str.split('in')
-    rank_str = rank_obj[0].trim()
-    # 美国
-    if rank_str.indexOf('#') > -1
-      rank = parseInt(rank_str[1..-1])
-    else if not rank_str
-      rank = 0
+multi_market_seller_rank = (sale_rank_wrapper, market) ->
+  ranks = []
+  return ranks unless sale_rank_wrapper
+  switch market
+    when 'amazon.com'
+    # 首先寻找大类别
+    # 然后再寻找小类别
+      ranks = ranks.concat extra_links(sale_rank_wrapper, '#', 'in')
+    when 'amazon.de'
+      ranks = ranks.concat extra_links(sale_rank_wrapper, 'Nr.', 'in')
     else
-      rank = parseInt(rank_str)
-    {rank: rank, category: rank_obj[1].trim()}
-
-  text = rank_li.text()
-  text = text[(text.indexOf("#") + 1)...text.indexOf('(')]
-  ranks = [str_to_rank(text)]
-  rank_li.find('.zg_hrsr_item').each (i) ->
-    ranks.push str_to_rank(@text())
+      ranks
   ranks
+
+# 从排名的节点中提取排名的 数组对象 [{rank:xx, category:xx}]
+extra_links = (sale_rank_wrapper, num_prefix, splitter) ->
+  links = []
+  text = sale_rank_wrapper.text()
+  if text.indexOf('(') > -1
+    text = text[(text.indexOf(num_prefix) + num_prefix.length)...text.indexOf('(')]
+    links.push str_to_rank(text, splitter) unless str_to_rank(text, splitter) is {}
+  sale_rank_wrapper.find('.zg_hrsr_item').each (i) ->
+    text = @text()[(@text().indexOf(num_prefix) + num_prefix.length)..-1]
+    links.push str_to_rank(text, splitter) unless str_to_rank(text, splitter) is {}
+  links
+
+# 将 [27 in Electronics > Accessories & Supplies > Accessories > Batteries] 转换成为
+# {rank:27, category:Electronics > Accessories & Supplies > Accessories > Batteries}
+str_to_rank = (str, splitter) ->
+  args = str.split(splitter)
+  if args.length == 2
+    {rank: parseInt(args[0].trim()), category: args[1].trim().replace(/\n/g, '')}
+  else
+    {}
+
 
 # 检查是否有优惠
 promotes = (wrapper) ->

@@ -3,6 +3,9 @@ fs = require 'fs'
 amz_parser = require '../routes/amz_parser'
 
 describe "Parser Amazon Listing", ->
+  #TODO 收集 Amazon 首页可能的其他情况, 按照情况进行更多的测试
+  # 1. 拥有价格/没有价格不可销售
+  # 2. 需要针对是否有更多 Offers 提供测试
   describe "US Listing", ->
     lst = {}
     before(->
@@ -32,6 +35,7 @@ describe "Parser Amazon Listing", ->
       lst.also_bought.length.should.equal 6
       lst.after_viewing.length.should.equal 4
     it "seller_rank success parsed", ->
+      lst.seller_rank.length.should.equal 2
       lst.seller_rank[0].rank.should.equal 847
       lst.seller_rank[0].category.should.equal "Cell Phones & Accessories"
       lst.seller_rank[1].rank.should.equal 27
@@ -71,9 +75,9 @@ describe "Parser Amazon Listing", ->
       lst.after_viewing.should.include('http://www.amazon.de/Ladeger%C3%A4t-Sensation-Thunderbolt-Handy-Anschl%C3%BCsse-enthalten/dp/B0067XRL56/ref=pd_cp_ce_0/276-5869019-3971841')
     it "seller_rank success parsed", ->
       lst.seller_rank[0].rank.should.equal 3
-      lst.seller_rank[0].category.should.equal "Elektronik > Smartphone- & Handyzubehör > Akkus"
-      lst.seller_rank[1].rank.should.equal 27
-      lst.seller_rank[1].category.should.equal " Elektronik > Zubehör > Zubehör für tragbare Geräte > MP3-Player-Zubehör > Ladegeräte"
+      lst.seller_rank[0].category.should.include('> Akkus')
+      lst.seller_rank[1].rank.should.equal 3
+      lst.seller_rank[1].category.should.include('> Ladege')
     it "promotes should be empty", ->
       lst.promotes.length.should.equal 5
       lst.promotes[2].should.include('Google Nexus 7 aus dem Angebot')
