@@ -17,9 +17,7 @@ fs = require 'fs'
       res.send(500, "<ul>" + e.stack.split('\n').map((v)->"<li>#{v}</li>").join('') + "</ul>")
   )
 
-@baidu = (req, res) ->
-  undefined.split('')
-  r.get('http://www.baidu.com', (err, request_req, body) ->
+@baidu = (req, res) -> r.get('http://www.baidu.com', (err, request_req, body) ->
     res.set("Content-Type", 'text/html')
     t = JSON.stringify(req.app.settings)
     res.send(t + body)
