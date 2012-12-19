@@ -2,6 +2,11 @@ should = require 'should'
 fs = require 'fs'
 amz_parser = require '../routes/amz_parser'
 
+describe "404 Page", ->
+  it "should return 404 code", ->
+    lst = amz_parser.listing(fs.readFileSync('./html/404.html', 'utf8'))
+    lst.code.should.equal 404
+
 describe "Parser Amazon Listing", ->
   #TODO 收集 Amazon 首页可能的其他情况, 按照情况进行更多的测试
   # 1. 拥有价格/没有价格不可销售

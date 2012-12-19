@@ -2,6 +2,8 @@ cheerio = require 'cheerio'
 
 @listing = (body) ->
   $ = cheerio.load(body)
+  # 404 page
+  return {code: 404} if $('title').text().indexOf('404') > -1
   # shared attrs
   asin = $('#ASIN').attr('value')
   market = $('.navFooterLogoLine a img').attr('alt')
