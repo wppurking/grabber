@@ -9,11 +9,13 @@ fs = require 'fs'
     headers:
       "Accept-Encoding": 'gzip'
       "User-Agent": "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11"
-  request(opt, (err, req, dat) ->
-    if req.headers['content-encoding'] == 'gzip'
+    pool: # 每一个 pool
+      maxSockets: 15
+  request(opt, (err, resq, dat) ->
+    if resq.headers['content-encoding'] == 'gzip'
       zlib.gunzip(dat, (e, unzip) ->
-        callback(err, req, unzip)
+        callback(err, resq, unzip) if callback
       )
     else
-      callback(err, req, dat)
+      callback(err, resq, dat) if callback
   )
