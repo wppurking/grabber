@@ -13,13 +13,15 @@ app.use((req, res, next) ->
 app.use(express.bodyParser())
 app.use(express.logger('dev'))
 #app.use(app.router)
-app.use(express.errorHandler(showStack: true, dumpExceptions: true))
 
 
 # after use...
 app.get(/^\/listing\/(\w+)\/(\w+)/, amazon.listing)
 app.get('/baidu', amazon.baidu)
 
+
+# at last handler error
+app.use(express.errorHandler(showStack: true, dumpExceptions: true))
 
 for i in process.argv
   if i.indexOf('env') > -1
