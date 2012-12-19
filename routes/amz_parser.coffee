@@ -17,8 +17,8 @@ cheerio = require 'cheerio'
     variation: $('#asinRedirect').length == 1
     title: $('#btAsinTitle').text()
     byWho: $("#btAsinTitle").parent().parent().find('a').text()
-    review_score: parseFloat(review_li.find('.swSprite').attr('title').split(' ')[0])
-    reviews: parseInt(review_li.find('.crAvgStars > a').text().split(' ')[0])
+    review_score: parseFloat($(".asinReviewsSummary[name=#{asin}] .swSprite").eq(0).attr('title').split(' ')[0])
+    reviews: parseInt($(".asinReviewsSummary[name=#{asin}]").eq(0).next().text().split(' ')[0])
     likes: parseInt($(".amazonLikeCount").text())
     price: multi_market_price_parse($, market)
     sale: multi_market_sale_parse($, market)

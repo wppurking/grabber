@@ -11,10 +11,14 @@ fs = require 'fs'
   r.get(url, (err, request_req, body) ->
     if process.env['ENV'] == 'dev'
       fs.writeFileSync("./#{asin}.html", body, "utf8", -> console.log 'Save Success.')
-    res.json(amz_parser.listing(body))
+    try
+      res.json(amz_parser.listing(body))
+    catch e
+      res.send(500, "<ul>" + e.stack.split('\n').map((v)->"<li>#{v}</li>").join('') + "</ul>")
   )
 
 @baidu = (req, res) ->
+  undefined.split('')
   r.get('http://www.baidu.com', (err, request_req, body) ->
     res.set("Content-Type", 'text/html')
     t = JSON.stringify(req.app.settings)

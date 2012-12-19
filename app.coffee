@@ -17,10 +17,9 @@ app.use(express.logger('dev'))
 
 # after use...
 app.get(/^\/listing\/(\w+)\/(\w+)/, amazon.listing)
-app.get('/baidu', amazon.baidu)
+app.get("/baidu", amazon.baidu)
 
-
-# at last handler error
+log express.errorHandler.toString()
 app.use(express.errorHandler(showStack: true, dumpExceptions: true))
 
 for i in process.argv
