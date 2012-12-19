@@ -5,7 +5,6 @@ amazon = require('./routes/amazon')
 log = (msg) -> console.log msg
 
 
-
 app.use((req, res, next) ->
   req._log = log
   next()
@@ -19,7 +18,6 @@ app.use(express.logger('dev'))
 app.get(/^\/listing\/(\w+)\/(\w+)/, amazon.listing)
 app.get("/baidu", amazon.baidu)
 
-log express.errorHandler.toString()
 app.use(express.errorHandler(showStack: true, dumpExceptions: true))
 
 for i in process.argv
