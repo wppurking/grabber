@@ -7,7 +7,7 @@ fs = require 'fs'
   market = req.params[0].toLowerCase()
   asin = req.params[1].toUpperCase()
   url = exports.amazon_url market, asin
-  console.log "Fetch URL: #{url}"
+  req._log "Fetch URL: #{url}"
   r.get(url, (err, request_req, body) ->
     if process.env['ENV'] == 'dev'
       fs.writeFileSync("./#{asin}.html", body, "utf8", -> console.log 'Save Success.')
@@ -17,7 +17,8 @@ fs = require 'fs'
 @baidu = (req, res) ->
   r.get('http://www.baidu.com', (err, request_req, body) ->
     res.set("Content-Type", 'text/html')
-    res.send(body)
+    t = JSON.stringify(req.app.settings)
+    res.send(t + body)
   )
 
 @amazon_url = (market, asin) ->
