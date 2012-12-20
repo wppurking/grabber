@@ -9,6 +9,7 @@
     "express":"3.0.4",
     "cheerio":"0.10.3",
     "request":"~2.12",
+    "redis":"~0.8.2",
     "mocha":"1.7.4",
     "should":"1.2.1"
   }
