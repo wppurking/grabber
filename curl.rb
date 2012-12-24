@@ -7,3 +7,8 @@ threads = []
 end
 
 threads.each(&:join)
+
+
+#rpush resque:queue:links "http://www.baidu.com" "http://www.baidu.com" "http://www.baidu.com" "http://www.baidu.com" "http://www.baidu.com"
+#rpush resque:queue:links "http://www.amazon.com/dp/B005NGKR54" "http://www.amazon.com/dp/B005NGKR54" "http://www.amazon.com/dp/B005NGKR54" "http://www.amazon.com/dp/B005NGKR54"
+
