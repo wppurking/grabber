@@ -3,8 +3,9 @@
 # 2. 任务执行发生错误, 需要将任务重新放回队列, 但不影响其他任务执行
 # 3. 这是一个 Resque 的简单复制
 redis = require 'redis'
+events = require 'events'
 
-class RedisWorker
+class RedisWorker extends events.EventEmitter
   @QUEUE_PREFIX = "resque:queue:"
   # 将需要使用到的 http 给注册在这里
   @r = require '../routes/req'
@@ -24,10 +25,10 @@ class RedisWorker
     else
       @redis = redis.createClient()
 
+    @.on("done", @done)
 
   # 不停向 redis 询问需要处理的 links
   work: =>
-    console.log "Current Job: " + @working_job_size
     if @working_job_size >= @concurrent_size
       setTimeout(@work, 100)
     else
@@ -44,7 +45,7 @@ class RedisWorker
         else
           @working_job_size += 1
           console.log "Deal a job: " + @working_job_size
-          @perform(err, link, @)
+          @perform(err, link)
           @work()
       )
 
@@ -58,7 +59,7 @@ class RedisWorker
 
   done: =>
     @working_job_size -= 1
-    console.log "Succes Job: " + @working_job_size
+    console.log "Remain Jobs: " + @working_job_size
 
 
 module.exports = RedisWorker
