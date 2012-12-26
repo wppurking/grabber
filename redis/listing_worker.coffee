@@ -16,7 +16,7 @@ class ListingWorker extends RedisWorker
           self.push_back(json)
         catch e
           console.log e
-        self.emit('done')
+        self.done()
       )
 
   push_back: (json)=>

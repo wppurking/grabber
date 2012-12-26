@@ -45,7 +45,7 @@ multi_market_currency = (market) ->
 # 解析不同市场的数字格式
 multi_market_num_parse = (str, market) ->
   switch market
-    when 'amazon.com'
+    when 'amazon.com', 'amazon.co.uk'
       parseFloat(str.replace(/,/g, ''))
     when 'amazon.de'
       parseFloat(str.replace(/\./g, '').replace(/,/g, '.'))
@@ -54,7 +54,7 @@ multi_market_num_parse = (str, market) ->
 
 multi_market_price_parse = (dom, market) ->
   switch market
-    when 'amazon.com'
+    when 'amazon.com', 'amazon.co.uk'
       multi_market_num_parse(dom('#listPriceValue').text()[1..-1], market)
     when 'amazon.de'
       multi_market_num_parse(dom('.priceLarge').text()[4..-1], market)
@@ -63,16 +63,17 @@ multi_market_price_parse = (dom, market) ->
 
 multi_market_sale_parse = (dom, market) ->
   switch market
-    when 'amazon.com'
+    when 'amazon.com', 'amazon.co.uk'
       multi_market_num_parse(dom('#actualPriceValue').text()[1..-1], market)
     when 'amazon.de'
       multi_market_num_parse(dom('.priceLarge').text()[4..-1], market)
     else
       0
 
+# 将 product features 与 technical details 合并记录到一起
 multi_market_product_features = (dom, market) ->
   switch market
-    when 'amazon.com'
+    when 'amazon.com', 'amazon.co.uk'
       fetures = dom("h2:contains('Product Features')").next().find('li').map(-> @text().trim())
       if dom('#technical_details')
         fetures = fetures.concat dom('#technical_details').parent().find('li').map(-> @text().trim())
@@ -86,7 +87,7 @@ multi_market_main_pic = (dom, market) ->
   switch market
     when 'amazon.com'
       dom('#prodImageCell img').attr('src')
-    when 'amazon.de'
+    when 'amazon.de', 'amazon.co.uk'
       dom('#main_image_0 img').attr('src')
     else
       ""
@@ -95,7 +96,7 @@ multi_market_seller_rank = (sale_rank_wrapper, market) ->
   ranks = []
   return ranks unless sale_rank_wrapper
   switch market
-    when 'amazon.com'
+    when 'amazon.com', 'amazon.co.uk'
     # 首先寻找大类别
     # 然后再寻找小类别
       ranks = ranks.concat extra_links(sale_rank_wrapper, '#', 'in')
@@ -110,7 +111,14 @@ extra_links = (sale_rank_wrapper, num_prefix, splitter) ->
   links = []
   text = sale_rank_wrapper.text()
   if text.indexOf('(') > -1
-    text = text[(text.indexOf(num_prefix) + num_prefix.length)...text.indexOf('(')]
+    prefixIndex = text.indexOf(num_prefix)
+    # 处理, 大类别没有第一个 #/Nr. 符号的情况; 使用 num_prefix 的索引大于 ( 的索引
+    if prefixIndex > text.indexOf('(')
+      # 不需要 :
+      prefixIndex = text.indexOf(":") + 1
+    else
+      prefixIndex += num_prefix.length
+    text = text[prefixIndex...text.indexOf('(')]
     links.push str_to_rank(text, splitter) unless str_to_rank(text, splitter) == {}
   sale_rank_wrapper.find('.zg_hrsr_item').each (i) ->
     text = @text()[(@text().indexOf(num_prefix) + num_prefix.length)..-1]

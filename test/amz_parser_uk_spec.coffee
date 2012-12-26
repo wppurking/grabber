@@ -20,25 +20,28 @@ describe "Amazon UK Listing Parse", ->
       lst.reviews.should.equal 270
       lst.likes.should.equal 11
     it "price, sale, currency success parsed", ->
-      lst.price.should.equal 33.81
-      lst.sale.should.equal 33.81
-      lst.currency.should.equal 'EUR'
+      lst.price.should.equal 74.99
+      lst.sale.should.equal 29.99
+      lst.currency.should.equal 'GBP'
     it "main_pic, product_features, product_desc success parsed", ->
-      lst.main_pic.should.equal "http://ecx.images-amazon.com/images/I/41OEY74%2BQkL._SL500_AA300_.jpg"
+      lst.main_pic.should.equal "http://ecx.images-amazon.com/images/I/41mXwpwYWeL._SL500_AA300_.jpg"
       lst.product_features.length.should.equal 5
-      lst.product_features[3].should.include('Mit den eleganten')
-      lst.product_desc.should.include "kabellose Steuerung Ihres Notebooks &ndash;"
+      lst.product_features[3].should.include('Lithium Polymer battery ensures high quality')
+      lst.product_desc.should.include "Sony Ericsson Xperia X10, X8, Arc"
     it "also_bought, after_viewing success parsed", ->
       lst.also_bought.length.should.equal 6
-      lst.also_bought.should.include("http://www.amazon.de/Rikomagic-Android-schwarz-PC-System-Mediaplayer/dp/B00A3S4XW0/ref=pd_sim_computers_2/279-1786366-4113547")
+      lst.also_bought.should.include("http://www.amazon.co.uk/StarTech-feet-Barrel-Power-Cable/dp/B003MQO96U/ref=pd_sim_computers_1")
       lst.after_viewing.length.should.equal 4
-      lst.after_viewing.should.include("http://www.amazon.de/Logitech-Tastatur-schnurlos-deutsches-Tastaturlayout/dp/B003Y3M93Q/ref=pd_cp_computers_1/279-1786366-4113547")
+      lst.after_viewing.should.include("http://www.amazon.co.uk/PowerGen-External-sensation-Thunderbolt-Blackberry/dp/B0073F92OK/ref=pd_cp_computers_3")
     it "seller_rank success parsed", ->
-      lst.seller_rank[0].rank.should.equal 1
-      lst.seller_rank[0].category.should.include('Computer & Zubeh')
-      console.log lst.seller_rank[1]
-      lst.seller_rank[1].rank.should.equal 1
-      lst.seller_rank[1].category.should.include('> Tastaturen')
-    it "promotes should be empty", ->
-      lst.promotes.length.should.equal 3
-      lst.promotes[2].should.include('Besuchen Sie auch den')
+      lst.seller_rank.length.should.equal 3
+      lst.seller_rank[0].rank.should.equal 248
+      lst.seller_rank[0].category.should.include('Computers & Accessories')
+      lst.seller_rank[1].rank.should.equal 6
+      lst.seller_rank[1].category.should.include('Batteries')
+      lst.seller_rank[2].rank.should.equal 39
+      lst.seller_rank[2].category.should.include('Chargers')
+    it "should have 2 promotes", ->
+      lst.promotes.length.should.equal 2
+      lst.promotes[0].should.include('Dual Output Port Car Charger')
+      lst.promotes[1].should.include('purchase 1 or more Qualifying Items')

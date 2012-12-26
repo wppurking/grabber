@@ -5,7 +5,7 @@
 redis = require 'redis'
 events = require 'events'
 
-class RedisWorker extends events.EventEmitter
+class RedisWorker
   @QUEUE_PREFIX = "resque:queue:"
   # 将需要使用到的 http 给注册在这里
   @r = require '../utils/req'
@@ -24,8 +24,6 @@ class RedisWorker extends events.EventEmitter
       @redis = redis.createClient(port, url)
     else
       @redis = redis.createClient()
-
-    @.on("done", @done)
 
   # 不停向 redis 询问需要处理的 links
   work: =>

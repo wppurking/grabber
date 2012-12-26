@@ -39,8 +39,10 @@ describe "Amazon DE Listing Parse", ->
       console.log lst.seller_rank[1]
       lst.seller_rank[1].rank.should.equal 1
       lst.seller_rank[1].category.should.include('> Tastaturen')
-    it "promotes should be empty", ->
+    it "should have 3 promotes", ->
       lst.promotes.length.should.equal 3
+      lst.promotes[0].should.include('erhalten Sie das bestellte')
+      lst.promotes[1].should.include('verschiedene Orte, aber immer')
       lst.promotes[2].should.include('Besuchen Sie auch den')
 
   describe "single value test", ->

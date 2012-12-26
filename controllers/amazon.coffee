@@ -6,7 +6,7 @@ fs = require 'fs'
 @listing = (req, res) ->
   market = req.params[0].toLowerCase()
   asin = req.params[1].toUpperCase()
-  url = amazon_url market, asin
+  url = exports.amazon_url market, asin
   req._log "Fetch URL: #{url}"
   r.get(url, (err, request_req, body) ->
     if process.env['ENV'] == 'dev'
@@ -23,7 +23,9 @@ fs = require 'fs'
   res.send(t + body)
 )
 
-amazon_url = (market, asin) ->
+
+# 需要暴露出来,进行测试
+@amazon_url = (market, asin) ->
   prefix = "http://www.amazon"
   switch market
     when "us", 'amazon_us', 'amazon.com' then prefix += ".com"
