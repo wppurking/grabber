@@ -1,6 +1,6 @@
 redis = require 'redis'
-r = require '../routes/req'
-amz_parser = require '../routes/amz_parser'
+r = require '../utils/req'
+amz_parser = require '../models/amz_parser'
 
 LINK_QUEUE = "resque:queue:links"
 LISTING_QUEUE = "resque:queue:listings"

@@ -8,7 +8,7 @@ events = require 'events'
 class RedisWorker extends events.EventEmitter
   @QUEUE_PREFIX = "resque:queue:"
   # 将需要使用到的 http 给注册在这里
-  @r = require '../routes/req'
+  @r = require '../utils/req'
 
 
   get: (url, callback) ->

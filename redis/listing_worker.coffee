@@ -1,5 +1,5 @@
 RedisWorker = require './redis_worker'
-amz_parser = require '../routes/amz_parser'
+amzParser = require '../models/amz_parser'
 fs = require 'fs'
 
 class ListingWorker extends RedisWorker
@@ -12,7 +12,7 @@ class ListingWorker extends RedisWorker
       self.get(link, (err, resp, body) ->
         fs.writeFile("./#{link[link.lastIndexOf('/')..-1]}.html", body, "utf8", -> console.log "Saved.")
         try
-          json = amz_parser.listing(body)
+          json = amzParser.listing(body)
           self.push_back(json)
         catch e
           console.log e
