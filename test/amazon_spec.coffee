@@ -1,5 +1,5 @@
 should = require 'should'
-amazon = require '../routes/amazon'
+amazon = require '../controllers/amazon'
 
 describe("Amazon URL Parse", () ->
   asin = "B008YRG5JQ"

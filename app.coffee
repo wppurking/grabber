@@ -1,6 +1,6 @@
 express = require('express')
 app = express()
-amazon = require('./routes/amazon')
+router = require './routes'
 
 log = (msg) -> console.log msg
 
@@ -11,12 +11,8 @@ app.use((req, res, next) ->
 )
 app.use(express.bodyParser())
 app.use(express.logger('dev'))
-#app.use(app.router)
 
-
-# after use...
-app.get(/^\/listing\/(\w+)\/(\w+)/, amazon.listing)
-app.get("/baidu", amazon.baidu)
+router(app)
 
 app.use(express.errorHandler(showStack: true, dumpExceptions: true))
 

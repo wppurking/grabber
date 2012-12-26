@@ -1,24 +1,24 @@
 should = require 'should'
 fs = require 'fs'
-amz_parser = require '../models/amz_parser'
+amzParser = require '../models/amz_parser'
 
-describe "Amazon DE Listing Parse", ->
+describe "Amazon UK Listing Parse", ->
   describe "Whole Listing", ->
     lst = {}
     before(->
-      de_html = fs.readFileSync('./html/B005G16098.html', 'utf8')
-      lst = amz_parser.listing(de_html)
+      de_html = fs.readFileSync('./html/B0063AAIRG.html', 'utf8')
+      lst = amzParser.listing(de_html)
     )
     it "market, asin, title, byWho, variation success parsed", ->
-      lst.market.should.equal 'amazon.de'
-      lst.asin.should.equal 'B005G16098'
-      lst.title.should.include('Logitech K400 Tastatur schnurlos')
-      lst.byWho.should.equal "Logitech"
-      lst.variation.should.equal false
+      lst.market.should.equal 'amazon.co.uk'
+      lst.asin.should.equal 'B0063AAIRG'
+      lst.title.should.include('Astro3E 10000mAh Dual 5V 3A')
+      lst.byWho.should.equal "Anker"
+      lst.variation.should.equal true
     it "review_score, reviews, likes success parsed", ->
-      lst.review_score.should.equal 4.5
-      lst.reviews.should.equal 379
-      lst.likes.should.equal 88
+      lst.review_score.should.equal 4.7
+      lst.reviews.should.equal 270
+      lst.likes.should.equal 11
     it "price, sale, currency success parsed", ->
       lst.price.should.equal 33.81
       lst.sale.should.equal 33.81
@@ -42,14 +42,3 @@ describe "Amazon DE Listing Parse", ->
     it "promotes should be empty", ->
       lst.promotes.length.should.equal 3
       lst.promotes[2].should.include('Besuchen Sie auch den')
-
-  describe "single value test", ->
-    lst = {}
-    before(->
-      lst = amz_parser.listing(fs.readFileSync('./html/number.de.html', 'utf8'))
-    )
-    it "should conver [.]->[] and [,]->[.]", ->
-      lst.price.should.equal 1134.14
-      lst.sale.should.equal 1134.14
-    it "have variation", ->
-      lst.variation.should.equal true

@@ -1,5 +1,5 @@
 should = require 'should'
-r = require '../routes/req'
+r = require '../utils/req'
 
 describe "Request modeul", ->
   it "should turn on pool", (done)->

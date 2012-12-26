@@ -1,6 +1,6 @@
 should = require 'should'
 fs = require 'fs'
-amz_parser = require '../routes/amz_parser'
+amz_parser = require '../models/amz_parser'
 
 describe "404 Page", ->
   it "should return 404 code", ->
