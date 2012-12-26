@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44c63f23-c1c9-4eb9-8f71-49bbb00474ff" name="Default" comment="">
+    <list default="true" id="44c63f23-c1c9-4eb9-8f71-49bbb00474ff" name="Default" comment="根据 https://github.com/cnodejs/nodeclub 的结构, 对自己的代码结构做了调整.&#10;&#10;* controllers, models, utils, routers 区分开来.&#10;* 增加 amazon.co.uk 的测试. (让测试通过吧)&#10;*">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/redis/_urls.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/amz_parser_uk_spec.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/html/B0063AAIRG.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/routes/amazon.coffee" afterPath="$PROJECT_DIR$/controllers/amazon.coffee" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/routes/amz_parser.coffee" afterPath="$PROJECT_DIR$/models/amz_parser.coffee" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/routes/req.coffee" afterPath="$PROJECT_DIR$/utils/req.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.coffee" afterPath="$PROJECT_DIR$/app.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/redis/listing_worker.coffee" afterPath="$PROJECT_DIR$/redis/listing_worker.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/redis/redis_worker.coffee" afterPath="$PROJECT_DIR$/redis/redis_worker.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/redis/simple.coffee" afterPath="$PROJECT_DIR$/redis/simple.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/amazon_spec.coffee" afterPath="$PROJECT_DIR$/test/amazon_spec.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/amz_parser_de_spec.coffee" afterPath="$PROJECT_DIR$/test/amz_parser_de_spec.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/amz_parser_us_spec.coffee" afterPath="$PROJECT_DIR$/test/amz_parser_us_spec.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/req_pool.coffee" afterPath="$PROJECT_DIR$/test/req_pool.coffee" />
+    </list>
+    <list id="93d792e9-a5bb-4a6a-b4c6-e5283c9b37bb" name="uncommit" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/amazon.coffee" afterPath="$PROJECT_DIR$/routes/amazon.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/amz_parser.coffee" afterPath="$PROJECT_DIR$/routes/amz_parser.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/amz_parser_spec.coffee" afterPath="$PROJECT_DIR$/test/amz_parser_spec.coffee" />
     </list>
     <ignored path="grabber.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,37 +39,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="amazon.coffee" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/amazon.coffee">
+      <file leaf-file-name="amz_parser_uk_spec.coffee" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/amz_parser_uk_spec.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="20" selection-start="312" selection-end="312" vertical-scroll-proportion="0.2829582">
+            <state line="18" column="33" selection-start="675" selection-end="675" vertical-scroll-proportion="0.41652894">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="amz_parser.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/amz_parser.coffee">
+      <file leaf-file-name="amz_parser_de_spec.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/amz_parser_de_spec.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="47" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="amz_parser_spec.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/amz_parser_spec.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="17" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="amazon_spec.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/amazon_spec.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="45" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
+            <state line="9" column="6" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -79,18 +76,23 @@
         <option value="$PROJECT_DIR$/routes/req.coffee" />
         <option value="$PROJECT_DIR$/routes/amzParse.coffee" />
         <option value="$PROJECT_DIR$/test/html/B008YRG5JQ.html" />
-        <option value="$PROJECT_DIR$/app.coffee" />
         <option value="$PROJECT_DIR$/test/amz_parser_spec.coffee" />
         <option value="$PROJECT_DIR$/routes/amz_parser.coffee" />
         <option value="$PROJECT_DIR$/routes/amazon.coffee" />
+        <option value="$PROJECT_DIR$/redis/listing_worker.coffee" />
+        <option value="$PROJECT_DIR$/app.coffee" />
+        <option value="$PROJECT_DIR$/routes.coffee" />
+        <option value="$PROJECT_DIR$/models/amz_parser.coffee" />
+        <option value="$PROJECT_DIR$/controllers/amazon.coffee" />
+        <option value="$PROJECT_DIR$/test/amz_parser_uk_spec.coffee" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
+    <option name="x" value="6" />
     <option name="y" value="22" />
-    <option name="width" value="1362" />
-    <option name="height" value="746" />
+    <option name="width" value="1908" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -140,6 +142,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -155,6 +158,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grabber" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -200,31 +217,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="restartRequiresConfirmation" value="true" />
     <property name="last_opened_file_path" value="/usr/local/lib/node_modules/coffee-script/bin/coffee" />
-    <property name="options.searchVisible" value="true" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/test/html" />
     </key>
   </component>
   <component name="RunManager" selected="Node JS.amazon.coffee">
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node JS" working-dir="$PROJECT_DIR$">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node JS" working-dir="$PROJECT_DIR$" coffeescript-run="false">
       <method />
     </configuration>
     <configuration default="true" type="NodeJSRemoteDebug" factoryName="Node JS Remote Debug">
@@ -326,32 +346,35 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="44c63f23-c1c9-4eb9-8f71-49bbb00474ff" name="Default" comment="" />
+      <changelist id="93d792e9-a5bb-4a6a-b4c6-e5283c9b37bb" name="uncommit" comment="" />
       <created>1355636999666</created>
       <updated>1355636999666</updated>
     </task>
+    <option name="trackContextForNewChangelist" value="false" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="22" width="1362" height="746" extended-state="0" />
-    <editor active="true" />
+    <frame x="6" y="22" width="1908" height="1039" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32908705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.39599383" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.59322035" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15252417" sideWeight="0.6709129" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990755" sideWeight="0.4969605" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990755" sideWeight="0.49772036" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990755" sideWeight="0.49772036" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908705" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -378,7 +401,7 @@
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="SHORT_DIFF_HORISONTALLY" value="true" />
     <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
@@ -407,93 +430,106 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/mocha/package.json">
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="2" selection-end="2" vertical-scroll-proportion="0.026272578">
+        <state line="531" column="4" selection-start="12085" selection-end="12085" vertical-scroll-proportion="0.33279744" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/html/B008YRG5JQ.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="480" column="0" selection-start="12292" selection-end="12292" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/amazon_spec.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="48" selection-start="240" selection-end="240" vertical-scroll-proportion="0.107103825">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="17" selection-start="210" selection-end="210" vertical-scroll-proportion="0.2829582">
+        <state line="11" column="5" selection-start="197" selection-end="197" vertical-scroll-proportion="0.16830601" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/curl.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="178" selection-end="178" vertical-scroll-proportion="0.13770492">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/express.js">
+    <entry file="file://$PROJECT_DIR$/redis/redis_worker.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="0" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.9517685">
+        <state line="13" column="24" selection-start="312" selection-end="312" vertical-scroll-proportion="0.09726776">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/node_modules/connect/node_modules/qs/test/browser/jquery.js">
+    <entry file="file://$PROJECT_DIR$/redis/listing_worker.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5345" column="4" selection-start="137904" selection-end="137904" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/amazon_spec.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="45" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="531" column="4" selection-start="12085" selection-end="12085" vertical-scroll-proportion="0.33279744">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/req.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="12" selection-start="210" selection-end="210" vertical-scroll-proportion="0.25723472">
+        <state line="7" column="16" selection-start="202" selection-end="202" vertical-scroll-proportion="0.107103825">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="342" selection-end="342" vertical-scroll-proportion="0.33440515">
+        <state line="12" column="9" selection-start="202" selection-end="202" vertical-scroll-proportion="0.18360655">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/curl.rb">
+    <entry file="file://$PROJECT_DIR$/models/amz_parser.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="19" selection-end="19" vertical-scroll-proportion="0.025723472">
+        <state line="2" column="7" selection-start="36" selection-end="36" vertical-scroll-proportion="0.015300547">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/html/B008YRG5JQ.html">
+    <entry file="file://$PROJECT_DIR$/routes.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="480" column="0" selection-start="12292" selection-end="12292" vertical-scroll-proportion="0.0">
+        <state line="6" column="21" selection-start="161" selection-end="161" vertical-scroll-proportion="0.091803275" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/html/B005G16098.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/amz_parser_spec.coffee">
+    <entry file="file://$PROJECT_DIR$/utils/req.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="17" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0">
+        <state line="1" column="18" selection-start="46" selection-end="46" vertical-scroll-proportion="0.015300547">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/amz_parser.coffee">
+    <entry file="file://$PROJECT_DIR$/controllers/amazon.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="47" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
+        <state line="15" column="4" selection-start="469" selection-end="469" vertical-scroll-proportion="0.22950819">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/amazon.coffee">
+    <entry file="file://$PROJECT_DIR$/test/amz_parser_de_spec.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="312" selection-end="312" vertical-scroll-proportion="0.2829582">
+        <state line="9" column="6" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/html/B0063AAIRG.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="28" selection-end="28" vertical-scroll-proportion="0.19156215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/amz_parser_uk_spec.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="33" selection-start="675" selection-end="675" vertical-scroll-proportion="0.41652894">
           <folding />
         </state>
       </provider>
