@@ -3,7 +3,7 @@ amzParser = require '../models/amz_parser'
 fs = require 'fs'
 
 
-@listing = (req, res) ->
+@listing = (req, res, next) ->
   market = req.params[0].toLowerCase()
   asin = req.params[1].toUpperCase()
   url = exports.amazon_url market, asin
@@ -14,7 +14,7 @@ fs = require 'fs'
     try
       res.json(amzParser.listing(body))
     catch e
-      res.send(500, "<ul>" + e.stack.split('\n').map((v)->"<li>#{v}</li>").join('') + "</ul>")
+      next(e, req, res)
   )
 
 @baidu = (req, res) -> r.get('http://www.baidu.com', (err, request_req, body) ->
