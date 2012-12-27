@@ -14,6 +14,8 @@ fs = require 'fs'
     try
       res.json(amzParser.listing(body))
     catch e
+    # 需要将没有处理的 ASIN 记录下来.
+      req._log "Parse Error, #{e}, URL:#{url}"
       next(e, req, res)
   )
 
