@@ -99,15 +99,15 @@ multi_market_seller_rank = (sale_rank_wrapper, market) ->
     when 'amazon.com', 'amazon.co.uk'
     # 首先寻找大类别
     # 然后再寻找小类别
-      ranks = ranks.concat extra_links(sale_rank_wrapper, '#', 'in')
+      ranks = ranks.concat extra_links(sale_rank_wrapper, '#', market, 'in')
     when 'amazon.de'
-      ranks = ranks.concat extra_links(sale_rank_wrapper, 'Nr.', 'in')
+      ranks = ranks.concat extra_links(sale_rank_wrapper, 'Nr.', market, 'in')
     else
       ranks
   ranks
 
 # 从排名的节点中提取排名的 数组对象 [{rank:xx, category:xx}]
-extra_links = (sale_rank_wrapper, num_prefix, splitter) ->
+extra_links = (sale_rank_wrapper, num_prefix, market, splitter) ->
   links = []
   text = sale_rank_wrapper.text()
   if text.indexOf('(') > -1
@@ -119,18 +119,18 @@ extra_links = (sale_rank_wrapper, num_prefix, splitter) ->
     else
       prefixIndex += num_prefix.length
     text = text[prefixIndex...text.indexOf('(')]
-    links.push str_to_rank(text, splitter) unless str_to_rank(text, splitter) == {}
+    links.push str_to_rank(text, splitter, market) unless str_to_rank(text, splitter, market) == {}
   sale_rank_wrapper.find('.zg_hrsr_item').each (i) ->
     text = @text()[(@text().indexOf(num_prefix) + num_prefix.length)..-1]
-    links.push str_to_rank(text, splitter) unless str_to_rank(text, splitter) == {}
+    links.push str_to_rank(text, splitter, market) unless str_to_rank(text, splitter, market) == {}
   links
 
 # 将 [27 in Electronics > Accessories & Supplies > Accessories > Batteries] 转换成为
 # {rank:27, category:Electronics > Accessories & Supplies > Accessories > Batteries}
-str_to_rank = (str, splitter) ->
+str_to_rank = (str, splitter, market) ->
   args = str.split(splitter)
   if args.length >= 2
-    {rank: parseInt(args[0].trim()), category: args[1..-1].join('').trim().replace(/\n/g, '')}
+    {rank: multi_market_num_parse(args[0].trim(), market), category: args[1..-1].join('').trim().replace(/\n/g, '')}
   else
     {}
 

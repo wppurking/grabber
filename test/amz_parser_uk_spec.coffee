@@ -35,7 +35,7 @@ describe "Amazon UK Listing Parse", ->
       lst.after_viewing.should.include("http://www.amazon.co.uk/PowerGen-External-sensation-Thunderbolt-Blackberry/dp/B0073F92OK/ref=pd_cp_computers_3")
     it "seller_rank success parsed", ->
       lst.seller_rank.length.should.equal 3
-      lst.seller_rank[0].rank.should.equal 248
+      lst.seller_rank[0].rank.should.equal 1248
       lst.seller_rank[0].category.should.include('Computers & Accessories')
       lst.seller_rank[1].rank.should.equal 6
       lst.seller_rank[1].category.should.include('Batteries')

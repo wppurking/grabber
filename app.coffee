@@ -22,5 +22,5 @@ for i in process.argv
 
 process.env['ENV'] = 'dev' unless process.env['ENV']
 
-log "grabber is in #{process.env['ENV']} mode."
+log "grabber is in #{process.env['ENV']} #{process.env.NODE_ENV} mode."
 app.listen(3000)
