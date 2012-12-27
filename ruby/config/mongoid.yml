@@ -1,0 +1,7 @@
+development:
+  sessions:
+    default:
+      database: graber
+      hosts:
+        - localhost:27017
+

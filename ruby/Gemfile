@@ -1,0 +1,5 @@
+source "http://ruby.taobao.org"
+
+gem 'activesupport', '~> 3.2.8'
+gem 'redis', '~> 3.0.0'
+gem 'mongoid', '~> 3.0.0'
