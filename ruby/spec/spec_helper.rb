@@ -46,8 +46,4 @@ end
 
 
 require 'rspec'
-
 Dir['./models/*.rb'].map { |f| require f }
-
-puts "jj"
-

@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe Listing do
   it "should correct load Listing" do
     Listing.methods.class.should == Array

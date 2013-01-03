@@ -3,5 +3,8 @@ source "http://ruby.taobao.org"
 gem 'activesupport', '~> 3.2.8'
 gem 'redis', '~> 3.0.0'
 gem 'mongoid', '~> 3.0.0'
-gem 'rspec', '~> 2.12'
-gem 'spork'
+
+group :test do
+  gem 'rspec', '~> 2.12'
+  gem 'spork'
+end
